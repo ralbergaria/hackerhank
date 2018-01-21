@@ -1,4 +1,4 @@
-package hackerhank;
+package hackerhank.introduction;
 
 import java.text.NumberFormat;
 import java.util.Currency;
