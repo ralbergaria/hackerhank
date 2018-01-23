@@ -1,4 +1,4 @@
-package hackerhank.bignumber.dataStructures;
+package hackerhank.dataStructures;
 
 import java.util.Scanner;
 
