@@ -1,19 +1,5 @@
 package hackerhank.dataStructures;
 
-<<<<<<< HEAD
-import java.util.Scanner;
-
-public class Solution_arraylist {
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		for (int i = 0; i < n; i++){
-			String line = sc.next();			
-			System.out.println(line);
-		}		
-	}
-=======
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -46,5 +32,4 @@ public class Solution_arraylist {
 
 	}
 
->>>>>>> branch 'master' of https://github.com/ralbergaria/hackerhank.git
 }
