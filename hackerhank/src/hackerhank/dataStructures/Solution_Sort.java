@@ -6,11 +6,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-class Student{
+class Student2{
 	private int id;
 	private String fname;
 	private double cgpa;
-	public Student(int id, String fname, double cgpa) {
+	public Student2(int id, String fname, double cgpa) {
 		super();
 		this.id = id;
 		this.fname = fname;
@@ -32,22 +32,22 @@ public class Solution_Sort {
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());
 
-		List<Student> studentList = new ArrayList<Student>();
+		List<Student2> studentList = new ArrayList<Student2>();
 		while(testCases>0){
 			int id = in.nextInt();
 			String fname = in.next();
 			double cgpa = in.nextDouble();
 
-			Student st = new Student(id, fname, cgpa);
+			Student2 st = new Student2(id, fname, cgpa);
 			studentList.add(st);
 
 			testCases--;
 		}
 		
-		Collections.sort(studentList, new Comparator<Student>() {
+		Collections.sort(studentList, new Comparator<Student2>() {
 
 			@Override
-			public int compare(Student o1, Student o2) {
+			public int compare(Student2 o1, Student2 o2) {
 				if(o2.getCgpa() == o1.getCgpa()) {
 					if(o1.getFname().equals(o2.getFname())) {
 						return o1.getId() - o2.getId();
@@ -58,7 +58,7 @@ public class Solution_Sort {
 			}
 		});
 		
-		for(Student st: studentList){
+		for(Student2 st: studentList){
 			System.out.println(st.getFname());
 		}
 	}
