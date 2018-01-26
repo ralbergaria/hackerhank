@@ -14,7 +14,7 @@ public class Solution_canyouaccess {
 			Object o;// Must be used to hold the reference of the instance of the class Solution.Inner.Private
 			
 			o = new Inner().new Private();
-			System.out.println(num + "is power of" +  ((Inner.Private) o).powerof2(num));
+			System.out.println(num + " is " +  ((Inner.Private) o).powerof2(num));
 			
 			System.out.println("An instance of class: " + o.getClass().getCanonicalName() + " has been created");
 		}//end of try
