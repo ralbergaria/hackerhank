@@ -3,7 +3,7 @@ package hackerhank.bignumber;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Solution_numberprimetest {
+public class Solution_numberprimetest {	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 	    BigInteger n = in.nextBigInteger();
