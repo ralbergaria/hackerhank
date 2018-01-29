@@ -92,22 +92,26 @@ class SumInLeavesVisitor extends TreeVis {
 }
 
 class ProductOfRedNodesVisitor extends TreeVis {
-	private int result = 1;
-	private long m = 1000000007L;
+	private long result = 1;
+	private final int M = 1000000007;
+
 	public int getResult() {
-		return result == 0? 1 : result;
+	    return (int) result;
 	}
 
 	public void visitNode(TreeNode node) {
-		if(node.getColor().equals(Color.RED))
-			result = (int) ((result * node.getValue()) % m);
+	    if(node.getColor().equals(Color.RED)) {
+	        result = (result * node.getValue()) % M;
+	    }
 	}
 
 	public void visitLeaf(TreeLeaf leaf) {
-		if(leaf.getColor().equals(Color.RED))
-			result = (int) ((result * leaf.getValue()) % m);
+	    if(leaf.getColor().equals(Color.RED)) {
+	        result = (result * leaf.getValue()) % M;
+	    }
 	}
 }
+
 
 class FancyVisitor extends TreeVis {
 	private int sumNonLeaf = 0;
@@ -170,8 +174,12 @@ public class Solution_VisitorPattern {
 	}
 
 	private static Tree getTree(int i) {
-		created = new boolean[n];
-		return buildTree(i, 0);
+		if(map.get(i).isEmpty())
+			return new TreeLeaf(Integer.valueOf(valores[i]), cores[i].equals("0")? Color.RED:Color.GREEN, 0);
+		else{
+			created = new boolean[n];
+			return buildTree(i, 0);
+		}
 	}
 
 	private static Tree buildTree(int pos, int depth) {
@@ -184,10 +192,10 @@ public class Solution_VisitorPattern {
 		}
 		
 		if (childs.isEmpty()){
-			return new TreeLeaf(Integer.valueOf(valores[pos]), cores[pos] == "0"? Color.RED:Color.GREEN, depth);
+			return new TreeLeaf(Integer.valueOf(valores[pos]), cores[pos].equals("0")? Color.RED:Color.GREEN, depth);
 		}
 		
-		TreeNode node = new TreeNode(Integer.valueOf(valores[pos]), cores[pos] == "0"? Color.RED:Color.GREEN, depth);
+		TreeNode node = new TreeNode(Integer.valueOf(valores[pos]), cores[pos].equals("0")? Color.RED:Color.GREEN, depth);
 		for(Tree child : childs){
 			node.addChild(child);
 		}
