@@ -22,7 +22,7 @@ public class Twins {
      * Complete the function below.
      * DO NOT MODIFY anything outside this method. 
      */
-    static boolean[] twins(String[] a, String[] b) 
+    static String[] twins(String[] a, String[] b) 
     {
     	int size = a.length;
     	String[] retorno = new String[size];
