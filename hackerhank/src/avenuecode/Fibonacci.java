@@ -1,4 +1,4 @@
-package squareTrade;
+package avenuecode;
 
 import java.util.Scanner;
 
